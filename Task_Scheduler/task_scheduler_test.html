@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Task Scheduler API compliance tests</title>
+	<script src='resources/testharness.js'></script>
+	<script src='resources/testharnessreport.js'></script>
+	<link rel='stylesheet' href='resource/testharness.css'>
+	<link rel="help" href="http://web-alarms.sysapps.org/" data-tested-assertations="following::OL[1]/LI[2]" />
+	<style>
+		div {padding:5px 5px 10px 5px;}
+	</style>
+  </head>
+  <body>
+	<div id="logs"></div> 
+	<div id="log"></div>
+
+
+  <script>
+    /**********************************************************************************************
+     * This test suite checks your implementation for compliance with the 
+     *	Task Scheduler API specification	  						     *
+     **********************************************************************************************/
+
+    /* Check if protocol is "app" */
+    if (window.location.protocol === "app:") {
+
+         /* Logging current domain */
+        var domain = window.location.protocol + "//" + window.location.host + "/";
+        document.getElementById("logs").innerHTML = "Current domain: " + domain;
+        
+
+        /********************************************************
+         *	4.2 Interface TaskScheduler  
+         *	
+         *	link: http://web-alarms.sysapps.org/#interface-taskscheduler
+         *	
+         ********************************************************/
+
+        /**	
+         *	getPendingTasks()
+         *
+         *	When invoked, method must run the following steps: 
+         *		1. Make a request to the system to retrieve the tasks that were 
+			    registered by the current application and whose scheduled time 
+			    is in the future. 
+         */
+         
+         
+         
+         
+        /**	
+         *	getPendingTasks()
+         *
+         *	When invoked, method must run the following steps: 
+         *		2. Let promise be a new Promise object and resolver its 
+			    associated resolver. 
+         */
+         
+         
+
+         
+         
+        /**	
+         *	getPendingTasks()
+         *
+         *	When invoked, method must run the following steps: 
+         *		3. Return promise and run the remaining steps asynchronously.  
+         */         
+         
+
+         
+         
+        /**	
+         *	getPendingTasks()
+         *
+         *	When invoked, method must run the following steps: 
+         *		4. If an error occurs, run these substeps and then terminate these steps:
+			    1. Let error be a new DOMError object whose name is "UnknownError".
+			    2. Run resolver's internal reject algorithm with error as value.
+
+         */         
+         
+         
+        /**	
+         *	getPendingTasks()
+         *
+         *	When invoked, method must run the following steps: 
+         *		5. When the operation completes successfully, run these substeps:
+			    1. Let tasks be a new array containing the ScheduledTask 
+				objects that were retrieved.
+			    2. Run resolver's intenal fulfill algorithm with tasks as value.
+
+         */     
+         
+         
+         
+         
+         
+        /**	
+         *	add(date, timezoneDirective[, data])
+         *
+         *	When invoked, method must run the following steps: 
+         *		1. Make a request to the system to schedule a new task 
+			  for the current application that will trigger at the given date. 
+			  Depending on the timezoneDirective argument, the system will honor
+			  the timezone information of that [ECMASCRIPT] Date object or not. 
+			  The system must associate the JSON-serializable data with the task if provided.
+         */         
+
+         
+        /**	
+         *	add(date, timezoneDirective[, data])
+         *
+         *	When invoked, method must run the following steps: 
+         *		2. Let promise be a new Promise object and resolver its associated resolver.
+         */         
+
+         
+         
+        /**	
+         *	add(date, timezoneDirective[, data])
+         *
+         *	When invoked, method must run the following steps: 
+         *		3. Return promise and run the remaining steps asynchronously.
+         */         
+
+         
+        /**	
+         *	add(date, timezoneDirective[, data])
+         *	
+         *	When invoked, method must run the following steps:
+         *		4.  If an error occurs, run these substeps and then terminate these steps:
+			    1. Let error be a new DOMError object whose name is "InvalidStateError" 
+				if the date argument is in the past, "QuotaExceededError" 
+				if the data argument exceeds an implementation-dependent size limit, 
+				and "UnknownError" otherwise.
+			    2. Run resolver's internal reject algorithm with error as value.
+         */         
+
+         
+         
+        /**	
+         *	add(date, timezoneDirective[, data])
+         *
+         *	When invoked, method must run the following steps: 	
+         *		5. When the operation completes successfully, run these substeps:
+			    1. Let task be a new ScheduledTask object.
+			    2. Set task's id attribute to the unique identifier returned 
+				by the system for the newly registered task.
+			    3. Set task's date attribute to the date argument.
+			    4. Set task's timezoneDirective attribute to the timezoneDirective argument.
+			    5. Set task's data attribute to the data argument, if provided.
+			    6. Run resolver's intenal fulfill algorithm with task as value.
+         */         
+         
+         
+        /**	
+         *	remove(taskId) 
+         *
+         *	When invoked, method must run the following steps: 
+         *		1. Make a request to the system to unregister the task 
+			    with the given unique taskId identifier..
+         */                  
+         
+
+         
+        /**	
+         *	remove(taskId) 
+         *
+         *	When invoked, method must run the following steps: 
+         *		2. Let promise be a new Promise object and resolver its associated resolver.
+         */                  
+
+
+         
+        /**	
+         *	remove(taskId) 
+         *
+         *	When invoked, method must run the following steps: 
+         *		3. Return promise and run the remaining steps asynchronously.
+         */                  
+
+         
+        /**	
+         *	remove(taskId) 
+         *
+         *	When invoked, method must run the following steps: 
+         *		4. if an error occurs, run these substeps and then terminate these steps:
+			    1. Let error be a new DOMError object whose name is "UnknownError".
+			    2. Run resolver's internal reject algorithm with error as value.
+         */                  
+
+         
+         
+        /**	
+         *	remove(taskId) 
+         *
+         *	When invoked, method must run the following steps: 
+         *		5.  When the operation completes successfully, run these substeps:
+			    1. Let removed be a boolean value.
+			    2. Set removed to true if the task was removed, 
+				and to false if there was no task with the given identifier.
+			    3. Run resolver's intenal fulfill algorithm with removed as value.
+         */                  
+         
+         
+         
+
+         
+        /********************************************************
+         *	4.3 Interface ScheduledTask   
+         *	
+         *	link: http://web-alarms.sysapps.org/#interface-scheduledtask
+         *	
+         ********************************************************/
+         
+         
+    } else {
+        document.getElementById("logs").innerHTML = 
+        "This is a test suite for app protocol only. Test aborted due to current protocol " 
+        + window.location.protocol;
+    }
+    
+  </script>
+  </body>
+</html>
+
+
+
